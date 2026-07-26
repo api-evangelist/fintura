@@ -1,7 +1,27 @@
 aid: fintura
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fintura.png
 name: Fintura
-description: Fintura is a company surfaced as a portfolio company of battery-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Fintura is a company name that appears on Battery Ventures' full list of all companies
+  (https://www.battery.com/list-of-all-companies/) with no linked website, sector, or status, and was
+  added to the API Evangelist network as a portfolio-derived stub awaiting enrichment. A July 2026
+  enrichment pass probed every plausible domain and found no confirmed, live company presence that can
+  be attributed to this Battery-listed entity - fintura.com resolves to an empty placeholder page,
+  fintura.de is parked for sale through a domain broker, and fintura.ai is a parked lander. A live SaaS
+  at fintura.io exists (workflow and CIPC-compliance automation for South African accounting firms) but
+  nothing publicly ties it to the Battery listing, so it is deliberately NOT claimed here. No developer
+  portal, documentation, OpenAPI, or any other API artifact was found, and no API surface is asserted.
+  This profile remains an unverified lead rather than a producer profile.
 url: https://raw.githubusercontent.com/api-evangelist/fintura/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +29,53 @@ x-backed-by:
 - battery-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-identity: unverified
+x-identity-probe:
+  date: '2026-07-20'
+  method: probed
+  note: No domain could be confirmed as the Battery Ventures-listed Fintura. Candidates recorded below
+    with observed HTTP status and what was actually served.
+  candidates:
+  - domain: fintura.com
+    https_status: 0
+    http_status: 200
+    finding: empty placeholder page (336 bytes, no title); IONOS mail records only
+    claimed: false
+  - domain: fintura.de
+    https_status: 200
+    finding: parked domain listed for sale via nameshift.com
+    claimed: false
+  - domain: fintura.io
+    https_status: 200
+    finding: live SaaS - "Workflow Automation for Accounting Firms and Finance Managers", CIPC
+      compliance automation (South Africa); no evidence linking it to Battery Ventures
+    claimed: false
+  - domain: fintura.ai
+    https_status: 200
+    finding: parked lander redirect
+    claimed: false
+  - domain: fintura.co
+    https_status: 0
+    finding: no response
+    claimed: false
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Venture Backed
+- Battery Ventures
+- Portfolio Lead
+- Unverified
 apis: []
+common: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
